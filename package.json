@@ -1,6 +1,8 @@
 {
   "name": "estampador-ia",
   "version": "1.0.0",
+  "description": "Gerador de estampas com IA",
+  "main": "index.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,7 +11,7 @@
   "dependencies": {
     "next": "13.5.11",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
-     "openai": "^3.2.1"
+    "react-dom": "18.2.0",
+    "openai": "^3.2.1"
   }
 }
