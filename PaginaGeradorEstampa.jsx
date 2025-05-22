@@ -40,12 +40,19 @@ export default function PaginaGeradorEstampa() {
         body: JSON.stringify({ prompt }),
       });
 
+      const data = await response.json();
+      
       if (!response.ok) {
-        const errorData = await response.json();
-        throw new Error(errorData.error || 'Erro ao gerar imagens');
+        throw new Error(data.error || 'Erro ao gerar imagens');
       }
 
-      const data = await response.json();
+      // Verificar se as URLs das imagens estão presentes na resposta
+      if (!data.original || !data.variacao) {
+        throw new Error('As URLs das imagens não foram retornadas pela API');
+      }
+
+      console.log('Resposta da API:', data);
+      
       setImagens({
         original: data.original,
         variacao: data.variacao
@@ -147,6 +154,10 @@ export default function PaginaGeradorEstampa() {
     setErroBigJPG(false);
   };
 
+  // Verificar se a chave da API OpenAI está configurada
+  const openaiApiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY;
+  const apiKeyMissing = !openaiApiKey;
+
   return (
     <div className="container">
       <h1>Gerador de Estampa com IA</h1>
@@ -187,10 +198,11 @@ export default function PaginaGeradorEstampa() {
           </div>
           
           {erro && <div className="erro">{erro}</div>}
+          {apiKeyMissing && <div className="erro">Chave da API OpenAI não configurada</div>}
           
           <button 
             onClick={gerarImagens} 
-            disabled={loading}
+            disabled={loading || apiKeyMissing}
             className="botao-gerar"
           >
             {loading ? 'Gerando imagens...' : 'Gerar imagem com IA'}
