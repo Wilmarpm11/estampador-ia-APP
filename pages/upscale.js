@@ -1,8 +1,4 @@
-// API para upscaling de imagens e conversão para PSD
-import fetch from 'node-fetch';
-import { createCanvas, loadImage } from 'canvas';
-import { AggregateBytesLimit } from 'next/dist/server/api-utils';
-
+// API para upscaling de imagens
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Método não permitido' });
@@ -95,7 +91,6 @@ export default async function handler(req, res) {
     console.log('Upscaling concluído com sucesso. URL da imagem processada:', resultUrl);
 
     // Retornar a URL da imagem processada
-    // Em uma implementação futura, aqui seria feita a conversão para PSD
     return res.status(200).json({ 
       success: true, 
       imageUrl: resultUrl,
