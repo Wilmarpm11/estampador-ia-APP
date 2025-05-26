@@ -11,7 +11,7 @@ export default function EstampaPreview({ url, onDownload }) {
       setError(null);
       
       // Chamar a API de upscaling no backend
-      const response = await fetch('/api/upscale', {
+      const response = await fetch('/api/psd-upscale', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -52,7 +52,7 @@ export default function EstampaPreview({ url, onDownload }) {
         className="botao-download"
         disabled={loading}
       >
-        {loading ? 'Processando...' : 'Baixar p/ Impressão'}
+        {loading ? 'Processando...' : 'Baixar p/ Photoshop (PSD)'}
       </button>
       
       {error && <div className="erro-download">{error}</div>}
