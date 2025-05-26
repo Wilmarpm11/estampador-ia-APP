@@ -1,8 +1,8 @@
 import { useState } from 'react';
 
-// Componente para exibir a prévia da estampa gerada (versão otimizada)
 export default function EstampaPreview({ url, onDownload }) {
   const [loading, setLoading] = useState(false);
+  const [processedUrl, setProcessedUrl] = useState(null);
   const [error, setError] = useState(null);
 
   const handleDownload = async () => {
@@ -11,7 +11,7 @@ export default function EstampaPreview({ url, onDownload }) {
       setError(null);
       
       // Chamar a API de upscaling no backend
-      const response = await fetch('/api/highres-download', {
+      const response = await fetch('/api/upscale', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -25,6 +25,7 @@ export default function EstampaPreview({ url, onDownload }) {
       }
 
       const data = await response.json();
+      setProcessedUrl(data.imageUrl);
       
       // Abrir a imagem processada em uma nova aba
       window.open(data.imageUrl, '_blank');
