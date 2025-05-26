@@ -1,6 +1,4 @@
-// API para upscaling de imagens e conversão para PSD
-import fetch from 'node-fetch';
-
+// API para upscaling de imagens
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Método não permitido' });
@@ -92,17 +90,11 @@ export default async function handler(req, res) {
 
     console.log('Upscaling concluído com sucesso. URL da imagem processada:', resultUrl);
 
-    // Simular conversão para PSD
-    // Em um ambiente de produção, aqui seria implementada a conversão real para PSD
-    // usando bibliotecas como psd-tools ou sharp com metadados PSD
-    
-    // Para esta implementação, vamos retornar a URL da imagem processada
-    // com instruções para o usuário sobre como abrir no Photoshop
+    // Retornar a URL da imagem processada
     return res.status(200).json({ 
       success: true, 
       imageUrl: resultUrl,
-      format: "psd",
-      message: 'Imagem processada com sucesso. Clique no link para baixar e abrir no Photoshop.'
+      message: 'Imagem processada com sucesso. Clique no link para baixar.'
     });
     
   } catch (error) {
