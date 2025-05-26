@@ -1,39 +1,40 @@
-// Função para gerar o prompt para a API da OpenAI com foco em ultra-realismo
+// Função para gerar o prompt para a API da OpenAI com foco em estampas tileáveis profissionais
 export function gerarPrompt(estilo, cores, fundo) {
   // Validação básica dos parâmetros
   if (!estilo || !cores || !fundo) {
     throw new Error('Todos os parâmetros são obrigatórios');
   }
 
-  // Construção do prompt com técnicas avançadas para ultra-realismo
+  // Construção do prompt com técnicas específicas para estampas tileáveis profissionais
   const prompt = `
-Crie uma estampa profissional ULTRA-REALISTA com as seguintes características:
+Crie uma estampa têxtil profissional PERFEITAMENTE TILEÁVEL com as seguintes características:
 
 - Estilo: ${estilo}
 - Cores principais: ${cores}
 - Fundo: ${fundo}
 
 REQUISITOS TÉCNICOS ESSENCIAIS:
-1. ULTRA-REALISMO FOTOGRÁFICO: Qualquer elemento natural DEVE parecer uma fotografia profissional de alta definição. Use técnicas de iluminação de estúdio, profundidade de campo apropriada, e detalhes microscópicos como veias em folhas, texturas de pele/penas/escamas em animais, e reflexos naturais de luz.
 
-2. PERFEITA TILEABILIDADE: A estampa DEVE ser matematicamente perfeita para repetição sem emendas visíveis. Os elementos nas bordas devem se conectar harmoniosamente quando o padrão é repetido. Evite elementos que cruzam as bordas a menos que continuem perfeitamente do outro lado.
+1. TILEABILIDADE PERFEITA: A estampa DEVE ser matematicamente perfeita para repetição contínua sem emendas visíveis. Os elementos nas bordas devem se conectar harmoniosamente quando o padrão é repetido, como nas estampas têxteis profissionais.
 
-3. SEPARAÇÃO CLARA PARA EDIÇÃO: Cada elemento principal DEVE ter bordas nítidas e bem definidas, com espaço suficiente entre eles para fácil seleção no Photoshop. Pense em cada elemento como uma camada separada.
+2. COMPOSIÇÃO EQUILIBRADA: Distribua os elementos de forma equilibrada, com áreas de respiro (como nas estampas de referência com fundo branco ou áreas menos densas). Evite aglomerações excessivas de elementos.
 
-4. ESPECIFICAÇÕES TÉCNICAS: 
-   - Resolução: 300 DPI mínimo
-   - Formato: RGB otimizado para impressão digital têxtil
+3. ELEMENTOS NATURAIS DETALHADOS: Inclua elementos naturais com alto nível de detalhamento:
+   - Folhagens tropicais com nervuras visíveis e variações de tom
+   - Flores com pétalas detalhadas e sombreamento realista
+   - Se incluir animais, represente-os com detalhes precisos de plumagem, pelagem ou escamas
+
+4. PADRÕES DE BASE: Inclua padrões de base (como animal print, texturas naturais) que se repitam perfeitamente, servindo como fundo para elementos maiores.
+
+5. ESPECIFICAÇÕES TÉCNICAS: 
+   - Resolução: 300 DPI mínimo para impressão digital têxtil
+   - Formato: RGB otimizado para impressão
    - Proporção: Exatamente 1:1 (quadrada)
-   - Contraste: Alto o suficiente para fácil seleção de elementos
+   - Contraste: Alto o suficiente para definição clara dos elementos
 
-5. DETALHES MICROSCÓPICOS: Inclua detalhes minuciosos que seriam visíveis em uma fotografia macro profissional:
-   - Para plantas: nervuras de folhas, texturas de pétalas, gradientes sutis
-   - Para animais: pelos individuais, escamas detalhadas, plumagem realista
-   - Para insetos: estruturas de asas transparentes, olhos compostos, antenas articuladas
+6. ESTRUTURA PARA EDIÇÃO: Desenhe cada elemento principal com bordas nítidas e bem definidas, com espaço suficiente entre eles para fácil seleção no Photoshop.
 
-IMPORTANTE: Esta estampa será usada para impressão têxtil profissional e editada no Photoshop. Os elementos devem parecer fotografias reais, não ilustrações ou desenhos. Use técnicas de fotografia profissional como iluminação de três pontos, profundidade de campo controlada, e composição equilibrada.
-
-Crie uma estampa com realismo fotográfico indistinguível de fotografias reais, mantendo perfeita tileabilidade e estrutura adequada para edição profissional.
+IMPORTANTE: Esta estampa será usada para impressão têxtil profissional. Crie uma estampa que se repita perfeitamente em todas as direções (horizontalmente e verticalmente), mantendo a continuidade visual sem emendas visíveis, exatamente como nas estampas de referência da indústria têxtil.
 `.trim();
   
   return prompt;
