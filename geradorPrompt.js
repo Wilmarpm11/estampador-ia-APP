@@ -6,6 +6,7 @@ export function gerarPrompt(estilo, cores, fundo) {
   }
 
   // Construção do prompt com detalhes técnicos para estampas profissionais editáveis no Photoshop
+  // com ênfase em elementos naturais realistas e padrões perfeitamente tileáveis
   const prompt = `
 Crie uma estampa profissional com as seguintes características:
 
@@ -14,15 +15,21 @@ Crie uma estampa profissional com as seguintes características:
 - Fundo: ${fundo}
 
 REQUISITOS TÉCNICOS ESSENCIAIS:
-1. TILEÁVEL/SEAMLESS: A estampa deve ser perfeitamente tileável (seamless pattern), sem emendas visíveis quando repetida horizontalmente e verticalmente.
-2. ELEMENTOS SEPARADOS EM CAMADAS: Desenhe os elementos principais separados e bem definidos, como se estivessem em camadas distintas do Photoshop.
-3. FORMATO PARA EDIÇÃO: Estrutura compatível com edição em PSD, com elementos claramente separáveis.
-4. QUALIDADE DE IMPRESSÃO: Alta resolução (300 DPI), formato RGB otimizado para impressão digital.
-5. PROPORÇÃO: Desenhe em proporção quadrada (1:1) para facilitar o tileamento.
+1. TILEÁVEL/SEAMLESS: A estampa deve ser PERFEITAMENTE tileável (seamless pattern), sem qualquer emenda visível quando repetida. Os elementos nas bordas devem se conectar harmoniosamente.
 
-IMPORTANTE: Esta estampa será editada no Photoshop. Os elementos devem ter contornos claros e bem definidos, permitindo seleção e edição individual. Evite gradientes complexos ou efeitos que dificultem a separação dos elementos.
+2. ELEMENTOS NATURAIS HIPER-REALISTAS: Qualquer elemento natural (plantas, animais, insetos, etc.) deve ser representado com extremo realismo fotográfico, com detalhes precisos de textura, sombras e proporções anatômicas corretas.
 
-Crie uma estampa profissional que atenda a todos estes requisitos técnicos.
+3. SEPARAÇÃO CLARA DE ELEMENTOS: Desenhe cada elemento principal com bordas bem definidas e separadas do fundo, como se estivessem em camadas distintas do Photoshop.
+
+4. QUALIDADE DE IMPRESSÃO PROFISSIONAL: Alta resolução (300 DPI), formato RGB otimizado para impressão digital têxtil.
+
+5. PROPORÇÃO QUADRADA: Desenhe em proporção 1:1 para facilitar o tileamento perfeito.
+
+6. CONTRASTE ADEQUADO: Garanta que os elementos principais tenham contraste suficiente com o fundo para fácil seleção e edição.
+
+IMPORTANTE: Esta estampa será editada no Photoshop e usada para impressão profissional. Os elementos devem ter contornos claros, detalhes realistas e estrutura que permita edição individual. Se incluir animais, insetos ou elementos da natureza, eles devem parecer fotograficamente reais, não estilizados ou cartunizados.
+
+Crie uma estampa profissional que atenda a todos estes requisitos técnicos, com foco especial no realismo dos elementos naturais e na perfeita tileabilidade do padrão.
 `.trim();
   
   return prompt;
