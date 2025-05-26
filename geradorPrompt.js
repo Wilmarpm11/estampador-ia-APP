@@ -1,35 +1,39 @@
-// Função para gerar o prompt para a API da OpenAI
+// Função para gerar o prompt para a API da OpenAI com foco em ultra-realismo
 export function gerarPrompt(estilo, cores, fundo) {
   // Validação básica dos parâmetros
   if (!estilo || !cores || !fundo) {
     throw new Error('Todos os parâmetros são obrigatórios');
   }
 
-  // Construção do prompt com detalhes técnicos para estampas profissionais editáveis no Photoshop
-  // com ênfase em elementos naturais realistas e padrões perfeitamente tileáveis
+  // Construção do prompt com técnicas avançadas para ultra-realismo
   const prompt = `
-Crie uma estampa profissional com as seguintes características:
+Crie uma estampa profissional ULTRA-REALISTA com as seguintes características:
 
 - Estilo: ${estilo}
 - Cores principais: ${cores}
 - Fundo: ${fundo}
 
 REQUISITOS TÉCNICOS ESSENCIAIS:
-1. TILEÁVEL/SEAMLESS: A estampa deve ser PERFEITAMENTE tileável (seamless pattern), sem qualquer emenda visível quando repetida. Os elementos nas bordas devem se conectar harmoniosamente.
+1. ULTRA-REALISMO FOTOGRÁFICO: Qualquer elemento natural DEVE parecer uma fotografia profissional de alta definição. Use técnicas de iluminação de estúdio, profundidade de campo apropriada, e detalhes microscópicos como veias em folhas, texturas de pele/penas/escamas em animais, e reflexos naturais de luz.
 
-2. ELEMENTOS NATURAIS HIPER-REALISTAS: Qualquer elemento natural (plantas, animais, insetos, etc.) deve ser representado com extremo realismo fotográfico, com detalhes precisos de textura, sombras e proporções anatômicas corretas.
+2. PERFEITA TILEABILIDADE: A estampa DEVE ser matematicamente perfeita para repetição sem emendas visíveis. Os elementos nas bordas devem se conectar harmoniosamente quando o padrão é repetido. Evite elementos que cruzam as bordas a menos que continuem perfeitamente do outro lado.
 
-3. SEPARAÇÃO CLARA DE ELEMENTOS: Desenhe cada elemento principal com bordas bem definidas e separadas do fundo, como se estivessem em camadas distintas do Photoshop.
+3. SEPARAÇÃO CLARA PARA EDIÇÃO: Cada elemento principal DEVE ter bordas nítidas e bem definidas, com espaço suficiente entre eles para fácil seleção no Photoshop. Pense em cada elemento como uma camada separada.
 
-4. QUALIDADE DE IMPRESSÃO PROFISSIONAL: Alta resolução (300 DPI), formato RGB otimizado para impressão digital têxtil.
+4. ESPECIFICAÇÕES TÉCNICAS: 
+   - Resolução: 300 DPI mínimo
+   - Formato: RGB otimizado para impressão digital têxtil
+   - Proporção: Exatamente 1:1 (quadrada)
+   - Contraste: Alto o suficiente para fácil seleção de elementos
 
-5. PROPORÇÃO QUADRADA: Desenhe em proporção 1:1 para facilitar o tileamento perfeito.
+5. DETALHES MICROSCÓPICOS: Inclua detalhes minuciosos que seriam visíveis em uma fotografia macro profissional:
+   - Para plantas: nervuras de folhas, texturas de pétalas, gradientes sutis
+   - Para animais: pelos individuais, escamas detalhadas, plumagem realista
+   - Para insetos: estruturas de asas transparentes, olhos compostos, antenas articuladas
 
-6. CONTRASTE ADEQUADO: Garanta que os elementos principais tenham contraste suficiente com o fundo para fácil seleção e edição.
+IMPORTANTE: Esta estampa será usada para impressão têxtil profissional e editada no Photoshop. Os elementos devem parecer fotografias reais, não ilustrações ou desenhos. Use técnicas de fotografia profissional como iluminação de três pontos, profundidade de campo controlada, e composição equilibrada.
 
-IMPORTANTE: Esta estampa será editada no Photoshop e usada para impressão profissional. Os elementos devem ter contornos claros, detalhes realistas e estrutura que permita edição individual. Se incluir animais, insetos ou elementos da natureza, eles devem parecer fotograficamente reais, não estilizados ou cartunizados.
-
-Crie uma estampa profissional que atenda a todos estes requisitos técnicos, com foco especial no realismo dos elementos naturais e na perfeita tileabilidade do padrão.
+Crie uma estampa com realismo fotográfico indistinguível de fotografias reais, mantendo perfeita tileabilidade e estrutura adequada para edição profissional.
 `.trim();
   
   return prompt;
