@@ -93,7 +93,7 @@ export default function PaginaGeradorEstampa() {
 
     r = requests.post(
         url='https://bigjpg.com/api/task/',
-        headers={'X-API-KEY': '429c448bea384a93b8232e29e51193cd'},
+        headers={'X-API-KEY': },
         data=json.dumps(data)
     )
     print(r.json())
