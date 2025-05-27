@@ -1,5 +1,5 @@
 {
-  "name": "estampador-ia",
+  "name": "estampador-ia-app",
   "version": "1.0.0",
   "description": "Gerador de estampas com IA",
   "main": "index.js",
