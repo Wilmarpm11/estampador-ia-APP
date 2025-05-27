@@ -79,25 +79,15 @@ export default function PaginaGeradorEstampa() {
       // Criar tarefa de upscaling no BigJPG
       const createTaskResponse = await fetch('https://bigjpg.com/api/task/create', {
         method: 'POST',
-     
-    import requests
-    import json
-
-    data = {
-        'style': 'art',
-        'noise': '3',
-        'x2': '1',
-        'file_name': 'small.jpg',
-        'input': 'YOUR_IMAGE_URL'
-    }
-
-    r = requests.post(
-        url='https://bigjpg.com/api/task/',
-        headers={'X-API-KEY': },
-        data=json.dumps(data)
-    )
-    print(r.json())
-
+        headers: {
+          'Content-Type': 'application/json',
+          'X-API-KEY': bigJpgApiKey
+        },
+        body: JSON.stringify({
+          url: url,
+          style: 'photo',
+          noise: 3,
+          scale: 8
         })
       });
 
